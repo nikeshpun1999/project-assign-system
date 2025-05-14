@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="employee_class_master_action" model="ir.actions.act_window">
+        <field name="name">Employee Class Master</field>
+        <field name="res_model">employee.class.master</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <record id="view_employee_class_master_tree" model="ir.ui.view">
+        <field name="name">employee.class.master.tree</field>
+        <field name="model">employee.class.master</field>
+        <field name="arch" type="xml">
+            <tree string="Employee Class Master Tree" editable="bottom"> 
+                <field name="no"/>
+                <field name="code" string="Employee Class Code"/>
+                <field name="name" string="Employee Class"/>
+                <field name="currency_id" invisible="1" nolabel="1"/>
+                <field name="unit_price"/>
+                <field name="delete_flag"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

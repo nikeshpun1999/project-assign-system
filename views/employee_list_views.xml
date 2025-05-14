@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="employee_list_action" model="ir.actions.act_window">
+        <field name="name">Employee List</field>
+        <field name="res_model">employee.list</field>
+        <field name="view_mode">tree,pivot</field>
+    </record>
+
+    <record id="view_employee_list_tree" model="ir.ui.view">
+        <field name="name">employee.list.tree</field>
+        <field name="model">employee.list</field>
+        <field name="arch" type="xml">
+            <tree string=" Employee List Tree" editable="bottom" create="0">
+                <field name="no"/>
+                <field name="employee_code"/>
+                <field name="employee_name" string='Employee Name'/>
+                <field name="total_projects"/>
+                <button name="action_view_employee_project_list" type="object" class="fa fa-eye btn-success"/>
+                <field name="currency_id" invisible="1" nolabel="1"/>
+                <field name="total_earning"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_employee_list_pivot" model="ir.ui.view">
+        <field name="name">employee.list.pivot</field>
+        <field name="model">employee.list</field>
+        <field name="arch" type="xml">
+            <pivot string="Employee List Pivot">
+                <field name="employee_name" type="row"/>
+                <field name="total_projects" type="measure"/>
+                <field name="total_earning" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+</odoo>

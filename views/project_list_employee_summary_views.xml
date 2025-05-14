@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_project_list_employee_summary_tree" model="ir.ui.view">
+        <field name="name">project.list.employee.summary.tree</field>
+        <field name="model">project.list.employee.summary</field>
+        <field name="arch" type="xml">
+            <tree string="Project List Employee Summary Tree" editable="bottom" create="0"> 
+                <field name="year"/>
+                <field name="month"/>
+                <field name="op_hours_planned"/>
+                <field name="op_hours_actual"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

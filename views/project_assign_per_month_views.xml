@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_project_assign_per_month_tree" model="ir.ui.view">
+        <field name="name">project.assign.per.month.tree</field>
+        <field name="model">project.employee.assign.per.month</field>
+        <field name="arch" type="xml">
+            <tree string="Project Assign Per Month Tree" editable="bottom" create="0">
+                <header>
+                    <button name="action_view_project_employee_assign" type="object" string="Assign Employee" class="btn btn-primary o_list_button_add" display="always"/>
+                    <button type="object" name="action_toggle_hours" 
+                            string="Toggle Hours" 
+                            class="btn btn-secondary" 
+                            display="always" />
+                            <!-- invisible='not show_actual' -->
+                    <!-- <button type="object" name="action_toggle_hours" 
+                            string="Switch to Actual Hours" 
+                            class="btn btn-secondary" 
+                            display="always" /> -->
+                            <!-- invisible='show_actual' -->
+                </header>
+                <field name="employee_code" string="Employee Name"/>
+                <field name="year" string="Year"/>
+                <!-- <button name="action_view_project_list_employee_summary" type="object" string="Summary" class="btn-primary"/> -->
+                <field name="month_04"/>
+                <field name="month_05"/>
+                <field name="month_06"/>
+                <field name="month_07"/>
+                <field name="month_08"/>
+                <field name="month_09"/>
+                <field name="month_10"/>
+                <field name="month_11"/>
+                <field name="month_12"/>
+                <field name="month_01"/>
+                <field name="month_02"/>
+                <field name="month_03"/>
+                <field name="show_actual" invisible="1" nolabel="1"/>
+                <field name="display_hours"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_project_assign_per_month_search" model="ir.ui.view">
+        <field name="name">project.assign.per.month.search</field>
+        <field name="model">project.employee.assign.per.month</field>
+        <field name="arch" type="xml">
+            <search string="Project Assign Per Month Search">
+                <field name="year" string="Year"/>
+                <filter name="filter_year" string="Year 2024" domain="[('year.year', '=', '2024')]"/>
+            </search>
+        </field>
+    </record>
+</odoo>
