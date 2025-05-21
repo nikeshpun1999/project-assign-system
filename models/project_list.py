@@ -8,6 +8,11 @@ class ProjectList(models.Model):
     
     employee_assignment_id = fields.Many2many('project.employee.assign', string='Employee Assignment')
 
+    project_employee_assign_per_month_id = fields.One2many('project.employee.assign.per.month','project_code')
+    project_list_per_month_id = fields.One2many('project.list.per.month','project_code')
+
+
+
     no = fields.Integer(string='No.', compute='_compute_sequence_no', store=False)
     project_code = fields.Many2one("project.master", required=True, help='Unique Key', index=True)
     project_name = fields.Char(related='project_code.name', store=True, readonly=False)
